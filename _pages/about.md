@@ -26,14 +26,12 @@ social: true # includes social icons at the bottom of the page
 #   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a bioinformatics professional interested in applying computational tools and technologies to address challenges in clinical and biomedical sciences. I am particularly passionate about working in clinical diagnostics space and play a pivotal role in bridging the gap between cutting-edge computational techniques and real-world patient outcomes.
+I am a bioinformatics professional interested in applying computational tools and technologies to address challenges in clinical and biomedical sciences. 
 
-Currently I work on developing computational frameworks to address the complexities of learning biological mechanisms from large-scale omics data. I focus on interpretability, scalability, and integrative approach to data modelling and extracting hidden patterns. I apply these methods to real-world tumor microenvironment datasets to gain insights into cellular identity, interactions, and decomposition of regulatory mechanisms for a deeper understanding of disease biology.
+I am particularly passionate about working in clinical space and play a pivotal role in bridging the gap between cutting-edge computational techniques and real-world patient outcomes.
 
-In the past, I worked as a bioinformatician in a molecular diagnostics laboratory, where I was a lead developer of bioinformatics platforms for oncology diagnostics assays. Additionally, I have spent some time working in biomedical research labs, running computational analysis, and as an analyst in an IT company.
+Currently I am an **Ph.D Candidate** in [Bioinformatics program](https://www.bioinformatics.ubc.ca/) at
+[University of British Columbia](https://www.ubc.ca/). I am also a **Pre-Doctoral Research Fellow** in Molecular Oncology department in 
+[British Columbia Cancer Research Center](https://www.bccrc.ca/). I work on developing computational frameworks to address the complexities of learning biological mechanisms from large-scale omics data. I focus on interpretability, scalability, and integrative approach to data modelling. I apply these methods to real-world tumor microenvironment datasets to gain insights into disease biology.
 
-```Ph.D Candidate | Bioinformatics | University of British Columbia```
-
-```Pre-Doctoral Research Fellow | Molecular Oncology | British Columbia Cancer Research Center```
-
-```Vancouver, British Columbia, Canada``` 
+In the past, I worked as a bioinformatician in a molecular diagnostics laboratory, where I was a lead developer of bioinformatics platforms for oncology diagnostics assays. Additionally, I have spent some time working in biomedical research labs as well as in tech companies.
