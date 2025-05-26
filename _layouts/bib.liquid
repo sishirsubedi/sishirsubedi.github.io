@@ -206,9 +206,9 @@
       {% endif %}
       {% if entry.html %}
         {% if entry.html contains '://' %}
-          <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
+          <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">url</a>
         {% else %}
-          <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
+          <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">url</a>
         {% endif %}
       {% endif %}
       {% if entry.pdf %}
@@ -368,5 +368,13 @@
         <div style="text-align: center;">{% include video.liquid path=entry.video class="img-fluid rounded z-depth-1" controls=true %}</div>
       </div>
     {% endif %}
+    {% if entry.tags %}
+  <div class="pub-tags" style="margin-top: 0.5rem;">
+    {% assign tag_list = entry.tags | split: "," %}
+    {% for tag in tag_list %}
+      <span class="badge rounded blue">{{ tag }}</span>
+    {% endfor %}
+  </div>
+{% endif %}
   </div>
 </div>
