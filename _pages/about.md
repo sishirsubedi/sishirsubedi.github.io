@@ -26,10 +26,8 @@ social: true # includes social icons at the bottom of the page
 #   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am interested in applying computational tools and technologies to address challenges in the life sciences. Especially, I am passionate about working in the clinical space and play a pivotal role in bridging the gap between cutting-edge computational techniques and real-world patient outcomes.
+I am interested in applying computational tools and technologies to address challenges in biomedicine. I am especially passionate about working on clinical problems and play a pivotal role in bridging the gap between cutting-edge computational techniques and real-world patient outcomes.
 
-Currently I am a **Ph.D Candidate** (thesis submitted) in [Bioinformatics program](https://www.bioinformatics.ubc.ca/) at
-[University of British Columbia](https://www.ubc.ca/). I am also a **Pre-Doctoral Research Fellow** in Molecular Oncology department in 
-[British Columbia Cancer Research Center](https://www.bccrc.ca/). I develop computational frameworks for large-scale omics data. I focus on interpretability, scalability, and integrative approach to data modelling. I apply these methods to cancer datasets to gain insights into disease biology.
+Currently I am a **Ph.D Candidate** (thesis submitted) in [Bioinformatics program](https://www.bioinformatics.ubc.ca/) at [University of British Columbia](https://www.ubc.ca/). I am also a **Pre-Doctoral Research Fellow** in [Causal Path Lab](https://ypark.github.io/) Molecular Oncology department in [British Columbia Cancer Research Center](https://www.bccrc.ca/). I develop computational frameworks for large-scale omics data. I focus on interpretability, scalability, and integrative approach to data modelling. I apply these methods to cancer datasets for insights into disease biology.
 
 In the past, I worked as a bioinformatician in a molecular diagnostics laboratory, where I was a lead developer of bioinformatics platforms for oncology diagnostics assays. Additionally, I have spent some time working in biomedical research labs as well as in tech companies.

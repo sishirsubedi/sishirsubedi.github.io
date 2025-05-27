@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /publications/
-header_label: Selected Projects
-title: Projects
+header_label: Selected publications
+title: Publications
 description: 
 nav: true
 nav_order: 2
