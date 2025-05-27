@@ -9,6 +9,7 @@ related_publications: false
 ---
 
 
+[Biolord](https://www.nature.com/articles/s41587-023-02079-x)
 
 <div class="row">
         {% include figure.liquid loading="eager" path="assets/img/proj1_overview.png" title="example image" class="img-fluid rounded z-depth-1" %}
