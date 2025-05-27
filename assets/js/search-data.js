@@ -9,16 +9,23 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-projects",
-          title: "Projects",
+  },{id: "nav-publications",
+          title: "Publications",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-projects",
+          title: "Projects",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-cv",
           title: "CV",
-          description: "Please click pdf for full CV.",
+          description: "Please see pdf for full CV.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -45,7 +52,12 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{
+      },{id: "projects-grasp",
+          title: 'GRASP',
+          description: "Graphical Representation Analysis of Single-cell Perturbations",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
