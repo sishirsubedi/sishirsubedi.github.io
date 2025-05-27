@@ -5,7 +5,7 @@ description: Graphical Representation Analysis of Single-cell Perturbations
 img: assets/img/proj1_thumb.png
 importance: 1
 category: project-ideas
-related_publications: true
+related_publications: false
 ---
 
 
@@ -16,6 +16,7 @@ related_publications: true
 <div class="caption">
     Overview of GRASP framework.
 </div>
+
 
 ### GRASP model:
 - Pre train steps:
@@ -32,4 +33,3 @@ related_publications: true
         - Discriminator learning for batch and group effect
 
         
-

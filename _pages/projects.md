@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-description:  In this section, I plan to discuss interesting topics related to data science and project ideas to address various challenges in analyzing large-scale biological data.
+description:  Project ideas and interesting topics related to data science.
 nav: true
 nav_order: 3
 display_categories: [ project-ideas, data-science]
