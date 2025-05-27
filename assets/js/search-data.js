@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "",
+          description: "In this section, I plan to discuss interesting topics related to data science and project ideas to address various challenges in analyzing large-scale biological data.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -52,11 +52,16 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{id: "projects-grasp",
+      },{id: "projects-embedding",
+          title: 'Embedding',
+          description: "Embedding of data in latent variable models",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-grasp",
           title: 'GRASP',
           description: "Graphical Representation Analysis of Single-cell Perturbations",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
+              window.location.href = "/projects/2_project/";
             },},{
         id: 'social-email',
         title: 'email',
