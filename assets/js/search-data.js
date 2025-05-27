@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "In this section, I plan to discuss interesting topics related to data science and project ideas to address various challenges in analyzing large-scale biological data.",
+          description: "Project ideas and interesting topics related to data science.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
