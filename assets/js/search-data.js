@@ -52,13 +52,13 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{id: "projects-data-embedding-in-representation-learning",
-          title: 'Data embedding in representation learning',
+      },{id: "projects-grasp",
+          title: 'GRASP',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-grasp",
-          title: 'GRASP',
+            },},{id: "projects-data-embedding-in-representation-learning",
+          title: 'Data embedding in representation learning',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
