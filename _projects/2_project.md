@@ -63,7 +63,7 @@ Preliminary results for simulation data:
 
 
 <div class="row">
-    <div style="width: 80%; margin: 0 auto;">
+    <div style="width: 100%; margin: 0 auto;">
  {% include figure.liquid loading="eager" path="assets/img/proj1_sim1.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -71,7 +71,7 @@ Preliminary results for simulation data:
  Mixed space representation.
 </div>
 <div class="row">
-    <div style="width: 80%; margin: 0 auto;">
+    <div style="width: 100%; margin: 0 auto;">
  {% include figure.liquid loading="eager" path="assets/img/proj1_sim2.png" title="example image" class="img-fluid rounded z-depth-1" %}
 </div>
 </div>
@@ -79,7 +79,7 @@ Preliminary results for simulation data:
  Attribute specific - batch representation.
 </div>
 <div class="row">
-    <div style="width: 80%; margin: 0 auto;">
+    <div style="width: 100%; margin: 0 auto;">
  {% include figure.liquid loading="eager" path="assets/img/proj1_sim3.png" title="example image" class="img-fluid rounded z-depth-1" %}
 </div>
 </div>
@@ -91,7 +91,7 @@ Preliminary results for normal pancreas real data:
 
 
 <div class="row">
-    <div style="width: 80%; margin: 0 auto;">
+    <div style="width: 100%; margin: 0 auto;">
  {% include figure.liquid loading="eager" path="assets/img/proj1_pancreas1.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -99,7 +99,7 @@ Preliminary results for normal pancreas real data:
  Mixed space representation.
 </div>
 <div class="row">
-    <div style="width: 80%; margin: 0 auto;">
+    <div style="width: 100%; margin: 0 auto;">
  {% include figure.liquid loading="eager" path="assets/img/proj1_pancreas2.png" title="example image" class="img-fluid rounded z-depth-1" %}
 </div>
 </div>
@@ -107,7 +107,7 @@ Preliminary results for normal pancreas real data:
  Attribute specific - batch representation.
 </div>
 <div class="row">
-    <div style="width: 80%; margin: 0 auto;">
+    <div style="width: 100%; margin: 0 auto;">
  {% include figure.liquid loading="eager" path="assets/img/proj1_pancreas3.png" title="example image" class="img-fluid rounded z-depth-1" %}
 </div>
 </div>
