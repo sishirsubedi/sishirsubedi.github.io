@@ -9,7 +9,7 @@ related_publications: false
 ---
 
 <span style="color:#2a9d8f; font-size:30px; font-weight:bold;">
-Use graph neural networks (GNN) for latent space decomposition
+Graph neural networks (GNN) for latent space decomposition
 </span>
 
 In [Biolord](https://www.nature.com/articles/s41587-023-02079-x) paper, authors present an interesting approach of decomposing   mixed latent space to capture label/condition specific effects. The described deep learning model is based on generative framework consisting of dedicated subnetwork for each known attribute. The multiple module networks are jointly optimized.
