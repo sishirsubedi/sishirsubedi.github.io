@@ -31,6 +31,11 @@ The computational methods used for latent variable modelling can be broadly clas
     </div>
 </div>
 
+
+<span style="color:#2a9d8f; font-size:20px; font-weight:bold;">
+Data embedding
+</span>
+
 We aim to transform cell embedding in gene space (cell x gene) to factor space (cell x factor), where each factor represents an abstract biological concept.
 
 - **Matrix factorization**: We approximate the count data matrix by learning two low-dimensional factor matrices that describe the structure of factors across cells and a weight matrix that specifies the contribution of each gene to inferred factors. This is a single transformation from gene space to factor space. 
@@ -43,7 +48,7 @@ We aim to transform cell embedding in gene space (cell x gene) to factor space (
   
 - **Foundation networks**: Neural networks with attention layers, as above, do not generalize across datasets. To learn a robust and generalizable network, we make two important changes: First, we assign an identity to each gene and learn identity-specific embeddings in addition to expression embedding. Second, we also assign an identity to each cell, including its cell type and disease state, and include its embedding in the training. Such a model would be "foundational" in nature, and learned parameters can be applied across different biological experiments. 
 
-The following table provies summary of different data embedding techniques used in single-cell data analysis.
+The following table provides summary of different data embedding techniques used in single-cell data analysis.
 
 <div class="row">
         {% include figure.liquid loading="eager" path="assets/img/proj2_overview.png" title="example image" class="img-fluid rounded z-depth-1" %}
