@@ -1,126 +1,56 @@
 ---
 layout: page
-title: GRASP
+title: Data embedding in representation learning
 description:
-img: assets/img/proj1_thumb.png
+img: assets/img/proj2_thumb.png
 importance: 1
-category: project-ideas
+category: data-science
 related_publications: false
 ---
 
 <span style="color:#2a9d8f; font-size:30px; font-weight:bold;">
-Graph neural networks (GNN) for latent space decomposition
+Data embedding in representation learning
 </span>
 
-In the [Biolord](https://www.nature.com/articles/s41587-023-02079-x) paper, the authors present an interesting approach to decomposing a mixed latent space to capture label/condition-specific effects. The described deep learning model is based on a generative framework consisting of a dedicated subnetwork for each known attribute. The multiple module networks are jointly optimized.
+The genomic data is ever-increasing in size and complexity. Technological advancements have enabled us to generate multimodal omics data from millions of cells. This large-scale data poses many challenges for researchers to extract true biological signals for discovery. 
 
-Overall idea of Biolord model is - 
-- step 1: generate mixed latent space
-- step 2: use label specific subnetwork to isolate label specific effects from mixed latent space
-- step 3: joint training with data reconstruction. 
+One approach to systematically learning complex biological data is to take advantage of the inherent features of biological mechanisms, i.e., genomic features often act in modules. We are interested in identifying hidden patterns that represent abstract concepts in the data and then linking those concepts to known biological modules or pathways using prior knowledge of genomic features.
 
-**Key idea**: Can we replace label-specific subnetworks with a single graph network built on a mixed space?
+<span style="color:#2a9d8f; font-size:20px; font-weight:bold;">
+How do we learn abstract concepts from biological data?
+</span>
 
-The updated Biolord model, named as **GRASP for Graph Representation Analysis for Single-cell Perturbations**, consists of the following steps.
+The latent variable model (LVM) provides a framework for learning a set of low-dimensional hidden variables from empirically measured high-dimensional data.
 
-**Low-dimensional space**: We first aim to use any dimension reduction technique to represent high-dimensional data in a low-dimensional space. This space is used to generate an attribute-specific graph. 
-
-**Attribute specific graphs**: Next, in low-dimensional space, we find similar cells from different groups. This approach will construct a cell-cell similarity graph in adjacent matrix format such that each cell has the edge with similar cells that belong to different labels. For example, if we have batch and cell-type labels, then we will generate batch and cell type-based graphs. In a batch-based graph, edges are constructed between similar cells from different batches (most likely from the same cell type). Similarly, in a cell type-based graph, edges are constructed between similar cells from different cell types (most likely from the same batch).
-
-**Why graphs?** First, we only build a single graph in mixed space instead of attribute-specific multiple modules in Biolord. We use the graph repeatedly to construct attribute-specific representations. This will provide scalability to the model. Second, when we use attribute-specific graphs, we can learn shared effects specific to each attribute. We can guide the shared effect to generate attribute-specific latent space.
-
-
-**Simplified training**: In Biolord, we have attribute-specific losses, but in GRASP, we have only two losses- 
-- reconstruction loss and 
-- alignment loss to encourage independence among attribute-specific factors. 
-
+The computational methods used for latent variable modelling can be broadly classified into two groups - **linear and nonlinear models**. The simple linear methods include Principle Component Analysis (PCA), while complex models consist of probabilistic matrix factorization and Latent Dirichlet Allocation (LDA) models. The nonlinear models are generally based on neural networks, where autoencoder or variational autoencoders (VAEs) represent simpler models, and complex models include deep generative networks such as generative adversarial networks (GANs), graph neural networks (GNNs), attention networks, diffusion networks, and large language-based foundational models. Both linear and nonlinear models can be designed within the Bayesian framework for enhanced interpretability and the incorporation of prior knowledge.
 
 <div class="row">
- {% include figure.liquid loading="eager" path="assets/img/proj1_overview.png" title="example image" class="img-fluid rounded z-depth-1" %}
-</div>
-<div class="caption">
- Overview of GRASP framework.
-</div>
-
-
-### GRASP model:
-- Here, we use batch and cell type labels as two attribute labels.
-- Pre-train steps:
-    - Use any latent space representation model (such as PCA) to obtain z_pca
-    - Generate a graph based on z_pca space and project it to batch space and group space
-- GRASP training :
-    - input: raw data and two graphs in batch space and group space
-    - model :
-        - Encode raw data to z_mix
-        - Capture batch effect z_batch using GNN(z_mix,batch space graph) 
-        - Capture group effect z_group using GNN(z_mix,group space graph) 
-        - Isolate z_unknown from FCN (z_mix, [z_batch + z_group])
-        - Reconstruct data using z_batch + z_group + z_unknown
-        - Discriminator learning for batch and group effect
-
-
-Preliminary results for simulation data:
-
-
-<div class="row">
-    <div style="width: 100%; margin: 0 auto;">
- {% include figure.liquid loading="eager" path="assets/img/proj1_sim1.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div style="width: 50%; margin: 0 auto;">
+ {% include figure.liquid loading="eager" path="assets/img/proj1_lvm.png" title="lvm image" class="img-fluid rounded z-depth-1"
+ %}
     </div>
 </div>
-<div class="caption">
- Mixed space representation.
-</div>
-<div class="row">
-    <div style="width: 100%; margin: 0 auto;">
- {% include figure.liquid loading="eager" path="assets/img/proj1_sim2.png" title="example image" class="img-fluid rounded z-depth-1" %}
-</div>
-</div>
-<div class="caption">
- Attribute specific - batch representation.
-</div>
-<div class="row">
-    <div style="width: 100%; margin: 0 auto;">
- {% include figure.liquid loading="eager" path="assets/img/proj1_sim3.png" title="example image" class="img-fluid rounded z-depth-1" %}
-</div>
-</div>
-<div class="caption">
- Attribute specific - cell type representation.
-</div>
-<div class="row">
-    <div style="width: 100%; margin: 0 auto;">
- {% include figure.liquid loading="eager" path="assets/img/proj1_sim4.png" title="example image" class="img-fluid rounded z-depth-1" %}
-</div>
-</div>
-<div class="caption">
-Unknown attribute (residual) representation.
-</div>
-
-Preliminary results for normal pancreas real data:
 
 
+<span style="color:#2a9d8f; font-size:20px; font-weight:bold;">
+Data embedding
+</span>
+
+We aim to transform cell embedding in gene space (cell x gene) to factor space (cell x factor), where each factor represents an abstract biological concept.
+
+- **Matrix factorization**: We approximate the count data matrix by learning two low-dimensional factor matrices that describe the structure of factors across cells and a weight matrix that specifies the contribution of each gene to inferred factors. This is a single transformation from gene space to factor space. 
+  
+- **Probabilistic Matrix Factorization**: Adding parametric layers is desirable for modeling gene count data, as it handles non-negative sparse datasets with high noise levels and missing values. This provides a multi-layer transformation from gene space to factor space. 
+  
+- **Neural networks**: Linear approximation of latent factors may not fully capture the complex structure of biological data. A neural network applies multiple nonlinear transformations and learns an abstract feature representation that captures the most informative structure. Additionally, graph layers incorporate topological information of cells into the model, while embedding layers provide better interpretability of latent spaces. 
+  
+- **Attention networks**: In the above methods, we directly embedded cells in latent space. Instead, we add a step of embedding for each gene using attention networks, such that relationships among genes are incorporated into the latent space.
+  
+- **Foundation networks**: Neural networks with attention layers, as above, do not generalize across datasets. To learn a robust and generalizable network, we make two important changes: First, we assign an identity to each gene and learn identity-specific embeddings in addition to expression embedding. Second, we also assign an identity to each cell, including its cell type and disease state, and include its embedding in the training. Such a model would be "foundational" in nature, and learned parameters can be applied across different biological experiments. 
+
+The following table provides a summary of different data embedding techniques used in single-cell data analysis.
+
 <div class="row">
-    <div style="width: 100%; margin: 0 auto;">
- {% include figure.liquid loading="eager" path="assets/img/proj1_pancreas1.png" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
- Mixed space representation.
-</div>
-<div class="row">
-    <div style="width: 100%; margin: 0 auto;">
- {% include figure.liquid loading="eager" path="assets/img/proj1_pancreas2.png" title="example image" class="img-fluid rounded z-depth-1" %}
-</div>
-</div>
-<div class="caption">
- Attribute specific - batch representation.
-</div>
-<div class="row">
-    <div style="width: 100%; margin: 0 auto;">
- {% include figure.liquid loading="eager" path="assets/img/proj1_pancreas3.png" title="example image" class="img-fluid rounded z-depth-1" %}
-</div>
-</div>
-<div class="caption">
- Attribute specific - cell type representation.
+ {% include figure.liquid loading="eager" path="assets/img/proj2_overview.png" title="example image" class="img-fluid rounded z-depth-1" %}
 </div>
 
-The results, especially from simulation data, are promising. In mixed space, we observe that the batch effect is dominant, followed by the cell type effect, which generates unique clusters. Attribute-specific representations exhibit distinct clusters that capture attribute effects. However, the results from the normal pancreas data are not convincing and suggest that more work is needed to refine the model. The project code used to generate the above results is available [GRASP](https://github.com/sishirsubedi/grasp). 
