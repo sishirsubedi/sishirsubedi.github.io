@@ -86,6 +86,14 @@ Preliminary results for simulation data:
 <div class="caption">
  Attribute specific - cell type representation.
 </div>
+<div class="row">
+    <div style="width: 100%; margin: 0 auto;">
+ {% include figure.liquid loading="eager" path="assets/img/proj1_sim4.png" title="example image" class="img-fluid rounded z-depth-1" %}
+</div>
+</div>
+<div class="caption">
+Unknown attribute (residual) representation.
+</div>
 
 Preliminary results for normal pancreas real data:
 
