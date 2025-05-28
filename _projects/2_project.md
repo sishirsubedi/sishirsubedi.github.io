@@ -115,4 +115,4 @@ Preliminary results for normal pancreas real data:
  Attribute specific - cell type representation.
 </div>
 
-Pilot project code used to generate the above results is available [GRASP](https://github.com/sishirsubedi/grasp). 
+The results, especially from simulation data, are promising. In mixed space, we observe that the batch effect is dominant, followed by the cell type effect, which generates unique clusters. Attribute-specific representations exhibit distinct clusters that capture attribute effects. However, the results from the normal pancreas data are not convincing and suggest that more work is needed to refine the model. The project code used to generate the above results is available [GRASP](https://github.com/sishirsubedi/grasp). 
