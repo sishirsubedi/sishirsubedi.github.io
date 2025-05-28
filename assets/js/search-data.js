@@ -62,6 +62,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-attncell",
+          title: 'AttnCell',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
             },},{
         id: 'social-email',
         title: 'email',
