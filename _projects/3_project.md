@@ -14,7 +14,7 @@ Dual embedded neural networks for biological interpretability
 
 The biological interpretability of deep learning models has been an intriguing problem. 
 
-In this project, I aim to design a deep learning model with robust biological interpretability.
+In this project, the main aim to design a deep learning model with robust biological interpretability.
 
 A model, named as attncell ( model explains where to pay "attention" to learn biological insights from "cell" data ) is focused on learning the following biological information:
 - gene interaction networks
