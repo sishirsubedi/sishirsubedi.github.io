@@ -95,7 +95,7 @@ Preliminary results for simulation data:
 Unknown attribute (residual) representation.
 </div>
 
-Preliminary results for normal pancreas real data:
+Preliminary results for normal pancreas data from [Seurat](https://satijalab.org/seurat/archive/v3.2/integration.html):
 
 
 <div class="row">
@@ -106,6 +106,8 @@ Preliminary results for normal pancreas real data:
 <div class="caption">
  Mixed space representation.
 </div>
+
+
 <div class="row">
     <div style="width: 100%; margin: 0 auto;">
  {% include figure.liquid loading="eager" path="assets/img/proj1_pancreas2.png" title="example image" class="img-fluid rounded z-depth-1" %}
