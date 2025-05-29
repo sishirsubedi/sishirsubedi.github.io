@@ -16,7 +16,7 @@ The biological interpretability of deep learning models has been a challenging a
 
 The primary objective of this project is to evaluate a deep learning model with robust biological interpretability.
 
-A model, named as attncell ( model explains where to pay "attention" from "cell" data ) is focused on learning the following biological information:
+A model, named as AttnCell ( model explains where to pay "attention" from "cell" data ) is focused on learning the following biological information:
 - gene interaction networks
 - activity of pathways in a cell
 - contribution of genes in pathways
@@ -26,7 +26,7 @@ A model, named as attncell ( model explains where to pay "attention" from "cell"
  {% include figure.liquid loading="eager" path="assets/img/proj3_overview.png" title="example image" class="img-fluid rounded z-depth-1" %}
 </div>
 <div class="caption">
- Overview of attnCell framework.
+ Overview of AttnCell framework.
 </div>
 
 We train the model using a variational inference algorithm and maximize the evidence lower bound (ELBO). We have two losses in the model: the Kullback-Leibler (KL) loss and the Multinomial-Dirichlet likelihood loss, both of which are in the decoder network. 
@@ -71,7 +71,7 @@ Preliminary results using normal pancreas data from [Seurat](https://satijalab.o
 </div>
 
 
-In conclusion, the results from attncell model are promising. We can further develop this idea to design a computational model that provides biological interpretability at multiple layers.
+In conclusion, the results from AttnCell model are promising. We can further develop this idea to design a computational model that provides biological interpretability at multiple layers.
 
-The code for [attncell](https://github.com/sishirsubedi/attncell/) model is available.
+The code for [AttnCell](https://github.com/sishirsubedi/attncell/) model is available.
 
