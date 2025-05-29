@@ -12,9 +12,9 @@ related_publications: false
 Dual embedded neural networks for biological interpretability
 </span>
 
-The biological interpretability of deep learning models has been an intriguing problem. 
+The biological interpretability of deep learning models has been a challenging and intriguing problem. 
 
-In this project, the main aim is to test a deep learning model with robust biological interpretability.
+The primary objective of this project is to evaluate a deep learning model with robust biological interpretability.
 
 A model, named as attncell ( model explains where to pay "attention" from "cell" data ) is focused on learning the following biological information:
 - gene interaction networks
@@ -29,12 +29,12 @@ A model, named as attncell ( model explains where to pay "attention" from "cell"
  Overview of attnCell framework.
 </div>
 
-We train the model using variational inference algorithm and maximize the evidence lower bound (ELBO). We have two loses in the model - Kullback-Leibler (KL) loss and Multinomial-Dirichlet likelihood loss, both in the decoder network. 
+We train the model using a variational inference algorithm and maximize the evidence lower bound (ELBO). We have two losses in the model: the Kullback-Leibler (KL) loss and the Multinomial-Dirichlet likelihood loss, both of which are in the decoder network. 
 
 Preliminary results using normal pancreas data from [Seurat](https://satijalab.org/seurat/archive/v3.2/integration.html).
 
 
-- Interpretability1: Gene interaction networks is learned by attention module in the model. The figure shows example of known marker genes - NPTX2/DLK1 for beta cells, LEPR/RBP4 for delta, and PLA2G1B/CPA1 for acinar cells in human pancreas.
+- Interpretability1: Gene interaction networks are learned by the attention module in the model. The figure illustrates examples of known marker genes, including NPTX2/DLK1 for beta cells, LEPR/RBP4 for delta cells, and PLA2G1B/CPA1 for acinar cells, in the human pancreas.
 
 <div class="row">
     <div style="width: 100%; margin: 0 auto;">
@@ -45,7 +45,7 @@ Preliminary results using normal pancreas data from [Seurat](https://satijalab.o
  Gene network learned by the model.
 </div>
 
-- Interpretability2: Activity of pathways in cells, which in general gives cell type identity, can be captured by analyzing UMAP representation of cells based on latent space learned by the model. Here, cell type specific clusters suggest that the factors learned by the model are biologically relevant. 
+- Interpretability2: The activity of pathways in cells, which generally determines cell type identity, can be captured by analyzing the UMAP representation of cells based on the latent space learned by the model. Here, cell type-specific clusters suggest that the factors learned by the model are biologically relevant. 
 
 
 <div class="row">
@@ -71,7 +71,7 @@ Preliminary results using normal pancreas data from [Seurat](https://satijalab.o
 </div>
 
 
-In conclusion, the results from attncell model is promising. We can further build on this idea to design a computational model which provides biological interpretability at different layers.
+In conclusion, the results from attncell model are promising. We can further develop this idea to design a computational model that provides biological interpretability at multiple layers.
 
 The code for [attncell](https://github.com/sishirsubedi/attncell/) model is available.
 

@@ -12,9 +12,11 @@ related_publications: false
 Data embedding in representation learning
 </span>
 
+In this project, we discuss major linear and nonlinear models used in single-cell fields for embedding gene expression data.
+
 The genomic data is ever-increasing in size and complexity. Technological advancements have enabled us to generate multimodal omics data from millions of cells. This large-scale data poses many challenges for researchers to extract true biological signals for discovery. 
 
-One approach to systematically learning complex biological data is to take advantage of the inherent features of biological mechanisms, i.e., genomic features often act in modules. We are interested in identifying hidden patterns that represent abstract concepts in the data and then linking those concepts to known biological modules or pathways using prior knowledge of genomic features.
+One approach to systematically learning complex biological data is to leverage the inherent features of biological mechanisms, i.e., genomic features often act in modules. We are interested in identifying hidden patterns that represent abstract concepts in the data and then linking those concepts to known biological modules or pathways using prior knowledge of genomic features.
 
 <span style="color:#2a9d8f; font-size:20px; font-weight:bold;">
 How do we learn abstract concepts from biological data?
@@ -22,7 +24,7 @@ How do we learn abstract concepts from biological data?
 
 The latent variable model (LVM) provides a framework for learning a set of low-dimensional hidden variables from empirically measured high-dimensional data.
 
-The computational methods used for latent variable modelling can be broadly classified into two groups - **linear and nonlinear models**. The simple linear methods include Principle Component Analysis (PCA), while complex models consist of probabilistic matrix factorization and Latent Dirichlet Allocation (LDA) models. The nonlinear models are generally based on neural networks, where autoencoder or variational autoencoders (VAEs) represent simpler models, and complex models include deep generative networks such as generative adversarial networks (GANs), graph neural networks (GNNs), attention networks, diffusion networks, and large language-based foundational models. Both linear and nonlinear models can be designed within the Bayesian framework for enhanced interpretability and the incorporation of prior knowledge.
+The computational methods used for latent variable modelling can be broadly classified into two groups - **linear and nonlinear models**. The simple linear methods include Principle Component Analysis (PCA). At the same time, complex models consist of probabilistic matrix factorization and Latent Dirichlet Allocation (LDA) models. The nonlinear models are generally based on neural networks, where autoencoders or variational autoencoders (VAEs) represent simpler models. Complex models encompass deep generative networks, including generative adversarial networks (GANs), graph neural networks (GNNs), attention networks, diffusion networks, and large language-based foundational models. Both linear and nonlinear models can be designed within the Bayesian framework to enhance interpretability and incorporate prior knowledge.
 
 <div class="row">
     <div style="width: 50%; margin: 0 auto;">
