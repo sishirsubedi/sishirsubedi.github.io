@@ -8,15 +8,15 @@ category: project-ideas
 related_publications: false
 ---
 
-<span style="color:#2a9d8f; font-size:30px; font-weight:bold;">
-Dual embedded neural networks for biological interpretability
+<span style="color:#2698ba; font-size:30px; font-weight:bold;">
+Attentive neural networks for biological interpretability
 </span>
 
 The biological interpretability of deep learning models has been a challenging and intriguing problem. 
 
 The primary objective of this project is to evaluate a deep learning model with robust biological interpretability.
 
-A model, named as AttnCell ( model explains where to pay "attention" from "cell" data ) is focused on learning the following biological information:
+A model, named AttnCell (where to pay "attention" in "cell" data) is focused on learning the following biological information:
 - gene interaction networks
 - activity of pathways in a cell
 - contribution of genes in pathways
@@ -34,7 +34,7 @@ We train the model using a variational inference algorithm and maximize the evid
 Preliminary results using normal pancreas data from [Seurat](https://satijalab.org/seurat/archive/v3.2/integration.html).
 
 
-- Interpretability1: Gene interaction networks are learned by the attention module in the model. The figure illustrates examples of known marker genes, including NPTX2/DLK1 for beta cells, LEPR/RBP4 for delta cells, and PLA2G1B/CPA1 for acinar cells, in the human pancreas.
+- **Interpretability1**: Gene interaction networks are learned by the attention module in the model. The figure illustrates examples of known marker genes, including NPTX2/DLK1 for beta cells, LEPR/RBP4 for delta cells, and PLA2G1B/CPA1 for acinar cells, in the human pancreas.
 
 <div class="row">
     <div style="width: 100%; margin: 0 auto;">
@@ -45,7 +45,7 @@ Preliminary results using normal pancreas data from [Seurat](https://satijalab.o
  Gene network learned by the model.
 </div>
 
-- Interpretability2: The activity of pathways in cells, which generally determines cell type identity, can be captured by analyzing the UMAP representation of cells based on the latent space learned by the model. Here, cell type-specific clusters suggest that the factors learned by the model are biologically relevant. 
+- **Interpretability2**: The activity of pathways in cells, which generally determines cell type identity, can be captured by analyzing the UMAP representation of cells based on the latent space learned by the model. Here, cell type-specific clusters suggest that the factors learned by the model are biologically relevant. 
 
 
 <div class="row">
@@ -58,7 +58,7 @@ Preliminary results using normal pancreas data from [Seurat](https://satijalab.o
 </div>
 
 
-- Interpretability3: Contribution of genes in pathways learned as factors/topics in the model. We can further investigate different gene activity in each factor using pathway analysis.
+- **Interpretability3**: Contribution of genes in pathways learned as factors/topics in the model. We can further investigate different gene activity in each factor using pathway analysis.
 
 
 <div class="row">

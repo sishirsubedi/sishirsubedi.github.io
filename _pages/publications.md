@@ -12,6 +12,8 @@ nav_order: 2
 
 <!-- Bibsearch Feature -->
 
+Full list on [google scholar](https://scholar.google.ca/citations?user=xDTNsgEAAAAJ&hl=en).
+
 {% include bib_search.liquid %}
 
 <div class="publications">

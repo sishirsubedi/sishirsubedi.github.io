@@ -2,12 +2,16 @@
 layout: page
 title: Projects
 permalink: /projects/
-description:  Project ideas and interesting topics related to data science.
+description: 
 nav: true
 nav_order: 3
 display_categories: [ project-ideas, data-science]
 horizontal: false
 ---
+
+<span style="color:#2698ba; font-size:30px; font-weight:bold;">
+Project ideas and interesting topics related to data science.
+</span>
 
 <!-- pages/projects.md -->
 <div class="projects">

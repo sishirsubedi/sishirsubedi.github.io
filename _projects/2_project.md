@@ -8,17 +8,17 @@ category: data-science
 related_publications: false
 ---
 
-<span style="color:#2a9d8f; font-size:30px; font-weight:bold;">
+<span style="color:#2698ba; font-size:30px; font-weight:bold;">
 Data embedding in representation learning
 </span>
 
-In this project, we discuss major linear and nonlinear models used in single-cell fields for embedding gene expression data.
+In this project, we discuss computational methods used in the single-cell analysis for embedding gene expression data.
 
 The genomic data is ever-increasing in size and complexity. Technological advancements have enabled us to generate multimodal omics data from millions of cells. This large-scale data poses many challenges for researchers to extract true biological signals for discovery. 
 
 One approach to systematically learning complex biological data is to leverage the inherent features of biological mechanisms, i.e., genomic features often act in modules. We are interested in identifying hidden patterns that represent abstract concepts in the data and then linking those concepts to known biological modules or pathways using prior knowledge of genomic features.
 
-<span style="color:#2a9d8f; font-size:20px; font-weight:bold;">
+<span style="color:#2698ba; font-size:20px; font-weight:bold;">
 How do we learn abstract concepts from biological data?
 </span>
 
@@ -34,7 +34,7 @@ The computational methods used for latent variable modelling can be broadly clas
 </div>
 
 
-<span style="color:#2a9d8f; font-size:20px; font-weight:bold;">
+<span style="color:#2698ba; font-size:20px; font-weight:bold;">
 Data embedding
 </span>
 

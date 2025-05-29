@@ -8,7 +8,7 @@ category: project-ideas
 related_publications: false
 ---
 
-<span style="color:#2a9d8f; font-size:30px; font-weight:bold;">
+<span style="color:#2698ba; font-size:30px; font-weight:bold;">
 Graph neural networks (GNN) for latent space decomposition
 </span>
 
@@ -29,10 +29,10 @@ The updated Biolord model, named **GRASP for Graph Representation Analysis for S
 
 **Attribute-specific graphs**: Next, in a low-dimensional space, we identify similar cells from different groups. This approach will construct a cell-cell similarity graph in adjacent matrix format such that each cell has an edge with similar cells that belong to different labels. For example, if we have batch and cell-type labels, we will generate batch and cell-type-based graphs. In a batch-based graph, edges are constructed between similar cells from different batches (most likely from the same cell type). Similarly, in a cell type-based graph, edges are constructed between similar cells from different cell types (most likely from the same batch).
 
-**Why graphs?** First, we build a single graph in mixed space, rather than attribute-specific multiple modules, in Biolord. ** We use the graph repeatedly to construct attribute-specific representations. This will provide scalability to the model. Second, when we use attribute-specific graphs, we can learn shared effects specific to each attribute. We can guide the shared effect to generate attribute-specific latent space.
+**Why graphs?** First, a single graph in mixed space replaces attribute-specific multiple modules presented in Biolord. We can use the graph repeatedly to construct attribute-specific representations. This will provide scalability to the model. Second, when we use attribute-specific graphs, we can learn shared effects specific to the attribute. We can guide the shared effect using GNN to generate attribute-specific latent space.
 
 
-**Simplified training**: In Biolord, we have many attribute-specific losses, but in GRASP, we have only two losses- 
+**Simplified training**: In Biolord, we have multiple attribute-specific losses, but in GRASP, we have only two losses- 
 - reconstruction loss and 
 - alignment loss to encourage independence among attribute-specific factors. 
 
