@@ -12,9 +12,11 @@ related_publications: false
 Graph neural networks (GNN) for latent space decomposition
 </span>
 
-In the [Biolord](https://www.nature.com/articles/s41587-023-02079-x) paper, the authors present an interesting approach to decomposing a mixed latent space to capture label/condition-specific effects. The described deep learning model is based on a generative framework consisting of a dedicated subnetwork for each known attribute. The multiple module networks are jointly optimized.
+In this project, we study [Biolord](https://www.nature.com/articles/s41587-023-02079-x) paper and use similar idea to design a new model to address the latent space decomposition problem. 
 
-Overall idea of Biolord model is - 
+The authors in the paper present an interesting approach to decomposing a mixed latent space to capture label/condition-specific effects. The described deep learning model is based on a generative framework consisting of a dedicated subnetwork for each known attribute. The multiple module networks are jointly optimized.
+
+Overall idea of Biolord model is: 
 - step 1: generate mixed latent space
 - step 2: use label specific subnetwork to isolate label specific effects from mixed latent space
 - step 3: joint training with data reconstruction. 
