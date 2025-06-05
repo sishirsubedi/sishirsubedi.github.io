@@ -1,0 +1,316 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Multimodal QTL mapping | Sishir Subedi </title> <meta name="author" content="Sishir Subedi"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://sishirsubedi.github.io/projects/4_project/"> <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Sishir</span> Subedi </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">Projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"></h1> <p class="post-description"></p> </header> <article> <p><span style="color:#2698ba; font-size:30px; font-weight:bold;"> Multimodal analysis for discovery of complex trait genetics </span></p> <p>In this project, I am interested in exploring multimodal (scATAC + scRNA + SNPs) data integration problems to reveal interesting disease mechanisms. <a href="https://www.cell.com/cell-genomics/fulltext/S2666-979X(22)00190-2?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2666979X22001902%3Fshowall%3Dtrue" rel="external nofollow noopener" target="_blank">Zhang et al 2023</a> paper analyzes data from COVID-19 patients and connects genetic variations, epigenetic factors, and immune responses at the cellular level.</p> <ul> <li> <strong>Paper</strong>: <a href="https://www.cell.com/cell-genomics/fulltext/S2666-979X(22)00190-2" rel="external nofollow noopener" target="_blank">Zhang, Bowen, et al. “Altered and allele-specific open chromatin landscape reveals epigenetic and genetic regulators of innate immunity in COVID-19.” Cell Genomics 3.2 (2023).</a> </li> <li> <strong>Data</strong>: <ul> <li><a href="https://nubes.helmholtz-berlin.de/s/wqg6tmX4fW7pci5" rel="external nofollow noopener" target="_blank">RNAseq and ATACseq</a></li> <li><a href="https://www.covid19hg.org/results/r7/" rel="external nofollow noopener" target="_blank">GWAS Summary</a></li> </ul> </li> </ul> <h2 id="scrnaseq-analysis">scRNAseq analysis</h2> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(Seurat)
+library(ArchR)
+library(ggplot2)
+
+sc_data &lt;- readRDS("data/Monocytes_scRNAseq.rds")
+sc_data &lt;- UpdateSeuratObject(sc_data)
+
+colnames(sc_data@meta.data)
+unique(sc_data@meta.data$celltype.idL0)
+pdf("UMAP_scRNA.pdf",height=4,width=8) 
+p1 &lt;- DimPlot(sc_data,label=T,group.by = "celltype.idL0")
+p2 &lt;- DimPlot(sc_data,label=T,group.by = "Severity")
+p &lt;- p1 + p2
+plot(p)
+dev.off()
+</code></pre></div></div> <p>The scRNAseq data consists of 25901 genes/features across 56569 cells within one assay. A total of 1,000 variable features were used for the analysis. <code class="language-plaintext highlighter-rouge">Harmony</code> was employed for data integration across COVID-19 patients.</p> <div class="row"> <div style="width: 100%; margin: 0 auto;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/proj4_scrnaumap-480.webp 480w,/assets/img/proj4_scrnaumap-800.webp 800w,/assets/img/proj4_scrnaumap-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/proj4_scrnaumap.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="UMAP of scRNAseq" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div class="caption"> UMAP of scRNAseq </div> <h2 id="scatacseq-analysis">scATACseq analysis</h2> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proj &lt;- readRDS("data/Monocyte_scATACseq/Save-ArchR-Project.rds")
+
+colnames(getCellColData(proj))
+
+umapEmbedding &lt;- getEmbedding(proj, embedding = "UMAP")
+cellColData &lt;- getCellColData(proj)
+
+umapData &lt;- data.frame(
+  Cell = rownames(umapEmbedding),
+  UMAP_1 = umapEmbedding[, 1],
+  UMAP_2 = umapEmbedding[, 2],
+  Clusters = cellColData[rownames(umapEmbedding), "Clusters"],
+  predictedGroup = cellColData[rownames(umapEmbedding), "predictedGroup"],
+  Severity = cellColData[rownames(umapEmbedding), "Severity"]
+)
+
+pdf("UMAP_scATAC.pdf",height=4,width=8)
+
+p1 &lt;- ggplot(umapData, aes(x = UMAP_1, y = UMAP_2, color = predictedGroup)) +
+  geom_point(size = 0.5) +
+  theme_minimal() +
+  labs(title = "UMAP Colored by Clusters", x = "UMAP 1", y = "UMAP 2")
+
+p2 &lt;- ggplot(umapData, aes(x = UMAP_1, y = UMAP_2, color = Severity)) +
+  geom_point(size = 0.5) +
+  theme_minimal() +
+  labs(title = "UMAP Colored by Clusters", x = "UMAP 1", y = "UMAP 2")
+
+p &lt;- p1 + p2
+plot(p)
+dev.off()
+</code></pre></div></div> <p>The ATACseq dataset comprises 24,919 genes/features and 10,596 single cells that passed basic quality control in the arrow files. TSS enrichment measures the degree to which the transcription start site (TSS) is more accessible compared to its flanking regions. A score&gt;10 is considered good accessibility. The dataset score is 13.9. The median number of unique fragments per cell is 5,389.5, indicating high-quality data. Also, doublet has been calculated and filtered.</p> <div class="row"> <div style="width: 100%; margin: 0 auto;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/proj4_scatacumap-480.webp 480w,/assets/img/proj4_scatacumap-800.webp 800w,/assets/img/proj4_scatacumap-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/proj4_scatacumap.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="UMAP of scATACseq" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div class="caption"> UMAP of scATACseq </div> <p>Integration was conducted using <code class="language-plaintext highlighter-rouge">addGeneIntegrationMatrix</code> function in archR. Briefly, both RNAseq and ATACseq chromatin accessiblility data (peaks) are projected onto low-dimensional latent space ( LSI for ATACseq and PCA for RNAseq). Cell matching across datasets based on similarity in this shared space, followed by gene expression imputation and cell type label transfer.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>projDm &lt;- addGeneIntegrationMatrix(
+     ArchRProj = projDm, 
+     useMatrix = "GeneScoreMatrix",
+     matrixName = "GeneIntegrationMatrix",
+     reducedDims = "IterativeLSI",
+     seRNA = scRNA,
+     addToArrow = FALSE,
+     groupRNA = "celltypeL0",
+     nameCell = "predictedCell_Un",
+     nameGroup = "predictedGroup_Un",
+     nameScore = "predictedScore_Un"
+)
+</code></pre></div></div> <p>Now, let’s outline the analysis plan:</p> <p><strong>Step 1</strong>: Use scATACseq analysis to extract the gene score matrix, which provides <code class="language-plaintext highlighter-rouge">gene x cell</code> chromatin accessibility data.</p> <p><strong>Step 2</strong>: Create pseudobulk data based on cell types for each patient. We transfer cell-type labels from single-cell data integration analysis. Here, we generate <code class="language-plaintext highlighter-rouge">gene x celltype_patient</code> pseudobulk data.</p> <p><strong>Step 3</strong>: Use publicly available COVID-19 GWAS summary statistics and select significantly disease-associated variants.</p> <p><strong>Step 4</strong>: Obtain patient-level genotype data.</p> <p>Once we generate three main data inputs:</p> <ul> <li>Pseudobulk chromatin accessibility data for each cell type and patient</li> <li>Significantly COVID-19-associated variants data</li> <li>Patient-level genotype data</li> </ul> <p>Next, we focus on our main data analysis question:</p> <h2 id="cell-type-specific-gene---chromatin-accessibility-association">Cell-type specific gene - chromatin accessibility association</h2> <p>Now, lets follow the analysis plan:</p> <p><strong>Step 1</strong>: Use scATACseq analysis to extract the gene score matrix, which provides <code class="language-plaintext highlighter-rouge">gene x cell</code> chromatin accessibility data.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proj &lt;- readRDS("data/Monocyte_scATACseq/Save-ArchR-Project.rds")
+
+# Update Arrow file paths
+oldArrowPaths &lt;- getArrowFiles(proj)
+newArrowPaths &lt;- gsub(
+  "/vol/projects/BIIM/Covid_50MHH/scATAC/analysis_new2/projMono_uniq/",
+  "/data/sishir/projects/qtl_wrksh/data/Monocyte_scATACseq/",
+  oldArrowPaths,
+  fixed = TRUE
+)
+names(newArrowPaths) &lt;- names(oldArrowPaths)
+newSampleColData &lt;- DataFrame(
+  ArrowFiles = newArrowPaths[rownames(proj@sampleColData)],
+  row.names = rownames(proj@sampleColData)
+)
+proj@sampleColData &lt;- newSampleColData
+getArrowFiles(proj)
+
+
+# Extract GeneScoreMatrix
+geneScoreMat &lt;- getMatrixFromProject(
+  ArchRProj = proj,
+  useMatrix = "GeneScoreMatrix"
+)
+counts &lt;- assay(geneScoreMat)
+rownames(counts) &lt;- rowData(geneScoreMat)$name
+
+</code></pre></div></div> <p>Here, counts matrix is a cell-by-gene matrix containing gene activity scores, not peak counts or direct gene expression. These scores are inferred from chromatin accessibility (e.g., promoter and enhancer regions) in scATAC-seq data, serving as a proxy for gene expression before scRNA-seq integration.</p> <p>Rows are genes (24919), columns are cells (10596)</p> <p><strong>Step 2</strong>: Create pseudobulk data based on cell types for each patient. We transfer cell-type labels from single-cell data integration analysis. Here, we generate <code class="language-plaintext highlighter-rouge">gene x celltype_patient</code> pseudobulk data.</p> <p>Here, we focus on three cell types - classical, non-classical monocytes, and CD163+ classical monocytes.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>colnames(getCellColData(proj))
+
+# Get cell type assignment from single cell integration analysis 
+celltypes &lt;- getCellColData(proj)$predictedGroup
+patients &lt;- getCellColData(proj)$patient
+
+# Create unique patient-cell type combinations
+combinations &lt;- paste0(patients, "_", celltypes)
+unique_combinations &lt;- unique(combinations)
+
+# Aggregate counts by patient and cell type (pseudobulk)
+pseudobulk &lt;- do.call(cbind, lapply(unique_combinations, function(combo) {
+  idx &lt;- which(combinations == combo)
+  if (length(idx) &gt; 0) {
+    Matrix::rowSums(counts[, idx, drop = FALSE])
+  } else {
+    Matrix::Matrix(0, nrow = nrow(counts), ncol = 1)
+  }
+}))
+colnames(pseudobulk) &lt;- unique_combinations
+
+gz &lt;- gzfile("data/pseudobulk.csv.gz", "w")
+write.csv(pseudobulk, file = gz, row.names = TRUE, col.names = TRUE)
+close(gz)
+
+</code></pre></div></div> <p><strong>Step 3</strong>: Use publicly available COVID-19 GWAS summary statistics and select significantly disease-associated variants.</p> <p>Here, we download COVID-19 GWAS summary statistics from <a href="https://www.covid19hg.org/results/r7/" rel="external nofollow noopener" target="_blank">COVID-19 host genetics initiative </a> database. We use COVID19-hg GWAS meta-analyses round 7 for all population data.</p> <p>The VCF file contains summary statistics for genetic variants, including columns like CHR, POS, REF, ALT, SNP, effect sizes (all_inv_var_meta_beta), standard errors (all_inv_var_meta_sebeta), p-values (all_inv_var_meta_p), allele frequencies (all_meta_AF), etc.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(dplyr)
+library(data.table)
+library(qqman)
+
+# Load GWAS data
+gwas &lt;- fread("data/summ_gwas.tsv")
+
+# Rename columns if needed
+colnames(gwas)[colnames(gwas) == "#CHR"] &lt;- "CHR"
+colnames(gwas)[colnames(gwas) == "POS"] &lt;- "BP"
+colnames(gwas)[colnames(gwas) == "all_inv_var_meta_p"] &lt;- "P"
+
+# Remove rows with NA or P=0
+gwas &lt;- gwas %&gt;% filter(!is.na(P), P &gt; 0)
+gwas$SNP &lt;- rownames(gwas)
+gwas[, SNP := paste0("rs", SNP)]
+gwas &lt;- gwas[,c("SNP", "CHR", "BP", "P")]
+
+pdf("GWAS_summary.pdf",height=4,width=8) 
+manhattan(gwas,
+          chr = "CHR",
+          bp = "BP",
+          p = "P",
+          snp = "SNP",
+          col = c("blue4", "orange3"),
+          genomewideline = -log10(5e-8),
+          suggestiveline = -log10(1e-5),
+          main = "COVID-19 GWAS Manhattan Plot - filtered SNPs")
+dev.off()
+
+</code></pre></div></div> <div class="row"> <div style="width: 100%; margin: 0 auto;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/proj4_gwas-480.webp 480w,/assets/img/proj4_gwas-800.webp 800w,/assets/img/proj4_gwas-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/proj4_gwas.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="Filtered SNPs associated with COVID-19" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div class="caption"> Filtered SNPs associated with COVID-19 </div> <p>Ok, now we have:</p> <ul> <li> <p>Summary GWAS data from COVID 19 patients where significant chr, position, and pvalues are estimated</p> </li> <li> <p>Chromatin accessibility data from pseudobulk where gene accesibility score is aggregated by cell type and patient</p> </li> <li> <p>We are missing donor level genotype data, we simulate the data as the original data has restricted access</p> </li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(data.table)
+
+pseudobulk &lt;- fread("data/pseudobulk.csv.gz")
+rownames &lt;- pseudobulk[[1]]
+pseudobulk &lt;- pseudobulk[, -1] 
+pseudobulk &lt;- as.matrix(pseudobulk) 
+rownames(pseudobulk) &lt;- rownames
+
+# Normalize pseudobulk for a specific cell type 
+celltype &lt;- "cMono"
+cols &lt;- grep(paste0("_", celltype, "$"), colnames(pseudobulk), value = TRUE)
+pseudobulk_cmono &lt;- pseudobulk[, cols]
+pseudobulk_cmono &lt;- t(scale(t(pseudobulk_cmono)))
+
+celltype &lt;- "ncMono"
+cols &lt;- grep(paste0("_", celltype, "$"), colnames(pseudobulk), value = TRUE)
+pseudobulk_ncmono &lt;- pseudobulk[, cols]
+pseudobulk_ncmono &lt;- t(scale(t(pseudobulk_ncmono)))
+
+
+# Map significant SNPs to genes within 1Mb
+gene_pos &lt;- as.data.table(rowData(geneScoreMat))[, .(name, seqnames, start, end)]
+setnames(gene_pos, c("gene", "chr", "start", "end"))
+gene_pos[, `:=`(start_window = start - 1e6, end_window = end + 1e6)]
+
+# Filter GWAS for significant SNPs
+gwas_sig &lt;- gwas[P &lt; 5e-8, ]
+gwas_sig[, CHR := as.character(CHR)] # Ensure CHR is character
+gene_pos[, chr := as.character(chr)]
+gwas_sig[, CHR := paste0("chr", CHR)]
+gwas[, CHR := paste0("chr", CHR)]
+
+# Join GWAS SNPs with genes
+genes_overlapping &lt;- gwas_sig[gene_pos, 
+                             .(SNP, gene, chr = CHR, pos = BP, P),
+                             on = .(CHR == chr, BP &gt;= start_window, BP &lt;= end_window),
+                             nomatch = 0]
+
+genes_unique &lt;- unique(genes_overlapping[, .(gene, chr)])
+</code></pre></div></div> <p><strong>Association analysis</strong>: For each gene present in both summary GWAS data and ATACseq data, we estimate <code class="language-plaintext highlighter-rouge">beta</code> values for all the SNPs associated with the gene. Then we use cell-type specific chromatic accessibility for all donors and fit a linear model</p> <ul> <li> <code class="language-plaintext highlighter-rouge">chromatin_accessibilty_score ~ SNPs</code>.</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>all_results &lt;- list()
+
+for ( gene in genes_unique$gene) {
+
+  print(gene)
+
+  # Get gene position
+  gene_pos &lt;- rowData(geneScoreMat)[rowData(geneScoreMat)$name == gene, ]
+  chr &lt;- as.character(gene_pos$seqnames)
+  start &lt;- gene_pos$start - 1e6
+  end &lt;- gene_pos$end + 1e6
+
+  # Subset GWAS SNPs in gene region
+  gwas_subset &lt;- gwas[gwas$CHR == chr &amp; gwas$BP &gt;= start &amp; gwas$BP &lt;= end, ]
+
+  # Estimate summary stats from pvalues
+  gwas_subset[, beta := qnorm(P/2, lower.tail = FALSE) * sign(runif(.N, -1, 1))]
+  gwas_subset[, se := abs(beta / qnorm(P/2, lower.tail = FALSE))]
+  gwas_subset[, freq := 0.5] # Default MAF
+  gwas_subset[, N := 1000] # Default sample size
+
+
+  # now we have two vectors: 
+  #(1) beta vector from gwas_subset data calculated based on pvalues from summary statistics
+  #(2) chromatin accesibility vector for gene in diffrent patients as pseudobulk_ct[gene,]
+
+  ## simulate genotype using estimation from gwas summary
+  n_donors_ncmono &lt;- length(pseudobulk_ncmono[gene,])
+  n_donors_cmono &lt;- length(pseudobulk_cmono[gene,])
+  n_donors &lt;- max(n_donors_ncmono, n_donors_cmono) 
+
+  if (any(is.nan(pseudobulk_ncmono[gene, ]) | is.na(pseudobulk_ncmono[gene, ])) || any(is.nan(pseudobulk_cmono[gene, ]) | is.na(pseudobulk_cmono[gene, ]))) next
+
+  geno &lt;- matrix(NA, nrow = nrow(gwas_subset), ncol = n_donors)
+  rownames(geno) &lt;- gwas_subset$SNP
+  for (i in 1:nrow(gwas_subset)) {
+    maf &lt;- gwas_subset$freq[i]
+    # Simulate genotypes (0, 1, 2) under Hardy-Weinberg equilibrium
+    geno[i, ] &lt;- rbinom(n_donors, 2, maf)
+  }
+  geno &lt;- t(geno)  # Donors x SNPs
+
+
+# Fit linear model
+fit_lm &lt;- function(scores, geno, n_donors) {
+  results &lt;- lapply(1:ncol(geno), function(i) {
+    snp &lt;- colnames(geno)[i]
+    valid_idx &lt;- 1:min(n_donors, nrow(geno))  # Match donor count
+    lm_fit &lt;- lm(scores ~ geno[valid_idx, i])
+    coef_summary &lt;- summary(lm_fit)$coefficients
+    if (nrow(coef_summary) &gt; 1) {
+      beta &lt;- coef_summary[2, 1]
+      se &lt;- coef_summary[2, 2]
+      pval &lt;- coef_summary[2, 4]
+    } else {
+      beta &lt;- NA
+      se &lt;- NA
+      pval &lt;- 1
+    }
+    list(beta = beta, se = se, pval = pval)
+  })
+  list(
+    beta = sapply(results, function(x) x$beta),
+    se = sapply(results, function(x) x$se),
+    pval = sapply(results, function(x) x$pval)
+  )
+}
+
+results_ncmono &lt;- fit_lm(pseudobulk_ncmono[gene,], geno, n_donors_ncmono)
+results_cmono &lt;- fit_lm(pseudobulk_cmono[gene,], geno, n_donors_cmono)
+
+gene_results &lt;- data.table(
+    gene = gene,
+    SNP = rep(gwas_subset$SNP, 2),
+    cell_type = rep(c("ncMono", "cMono"), each = nrow(gwas_subset)),
+    beta = c(results_ncmono$beta, results_cmono$beta),
+    se = c(results_ncmono$se, results_cmono$se),
+    pvalue = c(results_ncmono$pval, results_cmono$pval),
+    gwas_beta = rep(gwas_subset$beta, 2),
+    chr = chr,
+    pos = gwas_subset$BP
+  )
+
+all_results[[gene]] &lt;- gene_results
+
+}
+
+results &lt;- do.call(rbind, all_results)
+
+# Step 4: Identify cell-type-specific associations
+results[, sig := pvalue &lt; 0.05]
+
+results[, beta_diff := abs(beta - shift(beta, n = sum(cell_type == "ncMono"), type = "lead")), by = gene]
+results[, cell_specific := sig &amp; beta_diff &gt; 0.1]  # Threshold for specificity
+results &lt;- results[sig == TRUE | cell_specific == TRUE]
+write.csv(results, "data/snp_association_significant_genes_ncMono_cMono.csv")
+
+</code></pre></div></div> <p>Now, we select genes from the results in the original paper.</p> <p>We compare whether our analyses identified the same genes as highly associated with disease variants.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(data.table)
+library(ggplot2)
+results &lt;- fread("data/snp_association_significant_genes_ncMono_cMono.csv")
+
+gene_importance &lt;- results[sig == TRUE, .(importance = sum(abs(beta * gwas_beta))), 
+                          by = .(gene, cell_type)]
+gene_importance &lt;- gene_importance[cell_type == "ncMono"][order(-importance)]
+
+# Filter for one gene
+gene &lt;- "CXCR6"
+plot_data &lt;- results[gene == "CXCR6" &amp; sig == TRUE ]
+
+common_snps &lt;- plot_data[, .N, by = SNP][N == 2, SNP]
+plot_data &lt;- plot_data[SNP %in% common_snps]
+
+
+
+# Check for duplicate columns in plot_data
+if (any(duplicated(colnames(plot_data)))) {
+  plot_data &lt;- plot_data[, !duplicated(colnames(plot_data)), with = FALSE]
+}
+
+top_snps &lt;- plot_data[1:min(3, .N), SNP]
+plot_data &lt;- plot_data[SNP %in% top_snps]
+
+
+ggplot(plot_data, aes(x = SNP, y = beta, fill = cell_type)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = paste("Cell-Type-Specific SNP Associations for ",gene),
+        x = "SNP", y = "Beta (Effect Size)", fill = "Cell Type") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = c("ncMono" = "#1f77b4", "cMono" = "#ff7f0e"))
+
+ggsave(paste("cell_type_diff_",gene,".png"), width = 6, height = 10)
+
+</code></pre></div></div> <p>According to the paper’s results, the analyses identified genes such as <em>CCR1</em>, <em>CCR1</em>, <em>CXCR6</em>, and <em>IFNGR2</em> as associated with GWAS-mapped peaks.</p> <div class="row"> <div style="width: 50%; margin: 0 auto;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/proj4_PAPER-480.webp 480w,/assets/img/proj4_PAPER-800.webp 800w,/assets/img/proj4_PAPER-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/proj4_PAPER.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <p>In our analysis also, we can verify that SNPs in <em>CCR1</em>, <em>CCR1</em>, <em>CXCR6</em>, and <em>IFNGR2</em> genes are associated with cell-type specific chromatin accessibility.</p> <div class="row"> <div style="width: 50%; margin: 0 auto;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/proj4_CCR1-480.webp 480w,/assets/img/proj4_CCR1-800.webp 800w,/assets/img/proj4_CCR1-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/proj4_CCR1.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> <div style="width: 50%; margin: 0 auto;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/proj4_CCR2-480.webp 480w,/assets/img/proj4_CCR2-800.webp 800w,/assets/img/proj4_CCR2-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/proj4_CCR2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div class="row"> <div style="width: 50%; margin: 0 auto;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/proj4_CCRL2-480.webp 480w,/assets/img/proj4_CCRL2-800.webp 800w,/assets/img/proj4_CCRL2-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/proj4_CCRL2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> <div style="width: 50%; margin: 0 auto;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/proj4_CXCR6-480.webp 480w,/assets/img/proj4_CXCR6-800.webp 800w,/assets/img/proj4_CXCR6-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/proj4_CXCR6.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div class="row"> <div style="width: 50%; margin: 0 auto;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/proj4_IFNGR2-480.webp 480w,/assets/img/proj4_IFNGR2-800.webp 800w,/assets/img/proj4_IFNGR2-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/proj4_IFNGR2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <p>In conclusion, we used the published research study/data, repeated the analyses, and conducted GWAS summary-based SNP-to-chromatin accessibility association analysis to show how genetic variations are associated with chromatin accessibility in a cell-type specific manner. Our results identified the same group of genes and cell types as published in the paper. This analysis presents an approach to approximating a cell-type-resolved chromatin accessibility (caQTL) analysis using public GWAS summary data and chromatin accessibility profiles.</p> <p>The code used is available <a href="https://github.com/sishirsubedi/caQTL_analysis" rel="external nofollow noopener" target="_blank">caQTL_analysis</a>.</p> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2025 Sishir Subedi. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
+    addBackToTop();
+  </script> </body> </html>
