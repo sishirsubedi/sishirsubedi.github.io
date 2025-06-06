@@ -23,6 +23,7 @@ I will extend the original analyses to approximate cell-type-resolved chromatin 
 - **Data**:
   - [RNAseq and ATACseq](https://nubes.helmholtz-berlin.de/s/wqg6tmX4fW7pci5)
   - [GWAS Summary](https://www.covid19hg.org/results/r7/)
+  - [Paper Code](https://github.com/CiiM-Bioinformatics-group/MHH50_COVID19_code)
 
 ## scRNAseq analysis
 
