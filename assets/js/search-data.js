@@ -72,6 +72,21 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
+            },},{id: "projects-evaluate-scnet-model",
+          title: 'Evaluate scNET model',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_project/";
+            },},{id: "projects-flowrida",
+          title: 'flowRIDA',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_project/";
+            },},{id: "projects-neuralnmf",
+          title: 'neuralNMF',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_project/";
             },},{
         id: 'social-email',
         title: 'email',
