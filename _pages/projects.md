@@ -5,7 +5,7 @@ permalink: /projects/
 description: 
 nav: true
 nav_order: 3
-display_categories: [ project-ideas, data-science]
+# display_categories: [ project-ideas, data-science]
 horizontal: false
 ---
 
