@@ -3,10 +3,18 @@ layout: page
 title: flowRIDA
 description:
 img: assets/img/proj6_thumb.png
-importance: 1
+importance: 4
 category: project-ideas
 related_publications: false
 ---
+
+<div class="row">
+    <div style="width: 50%; height: 50%;  align: left; max-width:200px; max-height:200px">
+ {% include figure.liquid loading="eager" path="assets/img/proj6_thumb.png"
+ class="img-fluid rounded z-depth-1" %}
+ </div>
+</div>
+
 
 <span style="color:#2698ba; font-size:30px; font-weight:bold;">
 Flow-based RepresentatIon Disentanglement Analysis (FlowRIDA) </span>

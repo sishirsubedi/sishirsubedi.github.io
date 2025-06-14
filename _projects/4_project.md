@@ -3,10 +3,17 @@ layout: page
 title: Multimodal QTL mapping
 description:
 img: assets/img/proj4_thumb.png
-importance: 1
+importance: 7
 category: project-ideas
 related_publications: false
 ---
+
+<div class="row">
+    <div style="width: 50%; height: 50%;  align: left; max-width:200px; max-height:200px">
+ {% include figure.liquid loading="eager" path="assets/img/proj4_thumb.png"
+ class="img-fluid rounded z-depth-1" %}
+ </div>
+</div>
 
 <span style="color:#2698ba; font-size:30px; font-weight:bold;">
 Multimodal analysis for discovery of complex trait genetics
