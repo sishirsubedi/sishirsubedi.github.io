@@ -30,7 +30,7 @@ Given a matrix factorization problem, i.e.
 
 - pytorch autograd for the optimization of $\theta$ matrix  
 - least squares or PMF method for $\beta$ matrix optimization. 
-- neural network for multilayer factorization ( W -> $\beta 1$ -> $\beta 2$) where $\beta$ is new $W$ for each layer. 
+- neural network for multilayer factorization ( W -> $\theta 1$ -> $\theta 2$) where $\theta$ is new $W$ for each layer. 
 
 Reference - [Will, Tyler, Runyu Zhang, Eli Sadovnik, Mengdi Gao, Joshua Vendrow, Jamie Haddock, Denali Molitor, and Deanna Needell. "Neural nonnegative matrix factorization for hierarchical multilayer topic modeling." arXiv preprint arXiv:2303.00058 (2023).](https://arxiv.org/abs/2303.00058)
 

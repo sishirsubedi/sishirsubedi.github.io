@@ -24,7 +24,7 @@ This project focuses on learning deep learning models for causal inference probl
 
 - Average Treatment Effect: $ATE =\mathbb{E}[Y(1)-Y(0)]$
 
-- Conditional Average Treatment Effect: $CATE =\mathbb{E}[Y(1)-Y(0)|X=x]$
+- Conditional Average Treatment Effect: $CATE =\mathbb{E}[Y(1)-Y(0) \mid X=x]$
 
 The key problem in estimating treatment effects on outcome is that we only have one measurement ($Y(0)$ or $Y(1)$) for one individual. The missing outcome is counterfactual.
 
