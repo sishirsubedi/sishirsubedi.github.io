@@ -34,7 +34,7 @@
     "name": "Bioinformatician",
     "url":"https://www.houstonmethodist.org/",
     "position": "Houston Methodist Hospital, Texas, USA",
-    "startDate": "2018-01",
+    "startDate": "2018-06",
     "endDate": "2021-10",
     "summary": "Design and implement bioinformatics pipelines for cancer assays, real-time pathology analytics, and clinical tools. Collaborate with internal cross-functional teams and third-party vendors for data management and systems integration in the CLIA-certified diagnostics laboratory.",
     "highlights": ["Sequencing (Illunima, Ion, Nanopore), pipelines (cancer panel, WES, TMB, COVID), workflow (snakemake, singularity, conda), EHR/clinical reporting (Java, SQL, Epic systems, Tableau), HPC (PBS Torque, Azure)"]
