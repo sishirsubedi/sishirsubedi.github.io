@@ -21,6 +21,10 @@ Graph neural networks (GNN) for latent space decomposition
 
 In this project, we study the [Biolord](https://www.nature.com/articles/s41587-023-02079-x) paper and use a similar idea to design a new model that addresses the latent space decomposition problem. 
 
+- **Paper**: [Piran, Zoe, Niv Cohen, Yedid Hoshen, and Mor Nitzan. "Disentanglement of single-cell data with biolord." Nature Biotechnology 42, no. 11 (2024): 1678-1683.](https://www.nature.com/articles/s41587-023-02079-x)
+
+- **Code**: [github repository](https://github.com/nitzanlab/biolord)
+
 The authors in the paper present an interesting approach to decomposing a mixed latent space to capture label or condition-specific effects. The described deep learning model is based on a generative framework consisting of a dedicated subnetwork for each known attribute. The multiple module networks are jointly optimized.
 
 The overview of Biolord model is: 
