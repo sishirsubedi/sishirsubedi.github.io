@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: A lifelong learner - Bioinformatics, Machine Learning, Genomics
+subtitle: Bioinformatics | Machine Learning | Genomics
 
 profile:
   align: right
