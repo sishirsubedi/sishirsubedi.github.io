@@ -4,7 +4,7 @@ title: Casual inference
 description:
 img: assets/img/proj8_thumb.png
 importance: 8
-category: project-ideas
+category: data-science
 related_publications: false
 ---
 

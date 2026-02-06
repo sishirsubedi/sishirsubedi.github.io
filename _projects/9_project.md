@@ -4,7 +4,7 @@ title: Deep HMM
 description:
 img: assets/img/proj9_thumb.png
 importance: 9
-category: project-ideas
+category: data-science
 related_publications: false
 ---
 

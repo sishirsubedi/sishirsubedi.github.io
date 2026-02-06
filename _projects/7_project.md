@@ -4,7 +4,7 @@ title: neuralNMF
 description:
 img: assets/img/proj7_thumb.png
 importance: 6
-category: project-ideas
+category: data-science
 related_publications: false
 ---
 

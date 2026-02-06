@@ -4,7 +4,7 @@ title: Multimodal QTL mapping
 description:
 img: assets/img/proj4_thumb.png
 importance: 7
-category: project-ideas
+category: paper-reading
 related_publications: false
 ---
 

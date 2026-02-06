@@ -4,7 +4,7 @@ title: Evaluate scNET model
 description:
 img: assets/img/proj5_thumb.png
 importance: 7
-category: data-science
+category: paper-reading
 related_publications: false
 ---
 
