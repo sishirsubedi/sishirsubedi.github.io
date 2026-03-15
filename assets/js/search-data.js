@@ -52,8 +52,8 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{id: "projects-study-spamosaic-model",
-          title: 'Study SpaMosaic model',
+      },{id: "projects-graph-neural-network-for-integration",
+          title: 'Graph neural network for integration',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/10_project/";
