@@ -57,6 +57,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/10_project/";
+            },},{id: "projects-con-or-not-con",
+          title: 'Con or not con !',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/11_project/";
             },},{id: "projects-grasp",
           title: 'GRASP',
           description: "",
