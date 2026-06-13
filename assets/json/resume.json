@@ -27,7 +27,7 @@
       "position": "British Columbia Cancer Center, Vancouver, BC, Canada",
       "startDate": "2022-01-07",
       "endDate": "",
-      "summary": "Develop novel computational methods for large-scale omics data for interpretable deep learning models,scalable annotation, and multimodal data integration",
+      "summary": "Develop novel computational methods for large-scale omics data for interpretable deep learning models,scalable annotation, and multimodal data integration.",
       "highlights": ["Languages (Python, C++, R, Bash), deep learning (NNs, CNNs, RNNs, Transformers, GNNs, VAEs), libraries (PyTorch, scikit-learn), data science (feature engineering, latent variable models, optimization)"]
     },
     {
