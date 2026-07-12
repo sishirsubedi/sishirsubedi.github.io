@@ -22,11 +22,20 @@
   ],
   "work": [
     {
+      "name": "Bioinformatics Scientist",
+      "url":"https://www.moffitt.org/",
+      "position": "Moffitt Cancer Center, FL, USA",
+      "startDate": "2025-12-01",
+      "endDate": "",
+      "summary": "Develop applications for laboratory workflow automation and system integration. Apply machine learning techniques to support analysis and quality assessment of next-generation sequencing (NGS) clinical data.",
+      "highlights": ["Languages (C#, .NET, Python, C++, R, Bash)"]
+    },
+    {
       "name": "Graduate Research Assistant (PhD)",
       "url":"https://www.bccrc.ca/",
       "position": "British Columbia Cancer Center, Vancouver, BC, Canada",
       "startDate": "2022-01-07",
-      "endDate": "",
+      "endDate": "2025-10-15",
       "summary": "Develop novel computational methods for large-scale omics data for interpretable deep learning models,scalable annotation, and multimodal data integration.",
       "highlights": ["Languages (Python, C++, R, Bash), deep learning (NNs, CNNs, RNNs, Transformers, GNNs, VAEs), libraries (PyTorch, scikit-learn), data science (feature engineering, latent variable models, optimization)"]
     },
