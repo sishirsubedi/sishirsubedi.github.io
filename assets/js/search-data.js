@@ -62,6 +62,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/11_project/";
+            },},{id: "projects-dive-into-dl",
+          title: 'Dive into DL',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/12_project/";
             },},{id: "projects-grasp",
           title: 'GRASP',
           description: "",
