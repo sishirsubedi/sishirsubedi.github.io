@@ -19,7 +19,8 @@ related_publications: false
 Open-source deep learning book project
 </span>
 
-In this project, we modify/update [D2L.ai](https://github.com/sishirsubedi/d2lp#:~:text=Original%20Book%20website): Interactive Deep Learning Book with Multi-Framework Code, Math, and Discussions
+In this project, we modify/update [D2L.ai](https://d2l.ai/
+): Interactive Deep Learning Book with Multi-Framework Code, Math, and Discussions
 
 
 [Github repo](https://github.com/sishirsubedi/d2lp)
